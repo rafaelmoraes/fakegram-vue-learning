@@ -2,7 +2,7 @@
 
 > Picture manager API
 
-## Build and start
+## Build setup and start
 
 ``` bash
 # install dependencies

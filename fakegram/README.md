@@ -1,8 +1,8 @@
 # fakegram
 
-> Picture manager
+> Picture manager SPA
 
-## Build Setup
+## Build setup
 
 ``` bash
 # install dependencies
