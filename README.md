@@ -28,6 +28,8 @@ Now you should are inside the fakegram container, you can access this app on you
 ```bash
 cd fakegram
 
+npm install
+
 npm run dev
 ```
 
