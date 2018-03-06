@@ -1,0 +1,36 @@
+version: '3'
+
+networks:
+  fakegram-network:
+    driver: bridge
+
+services:
+  fakegram:
+    build:
+      dockerfile: vue-cli-2.7.0.dockerfile
+      context: ./fakegram
+    image: rmoraes/fakegram:v1
+    container_name: fakegram
+    working_dir: /development
+    volumes:
+     - .:/development:z
+     - .docker_volume/root_home:/root:z
+    ports:
+      - "8080:8080"
+    networks:
+      - fakegram-network
+    depends_on:
+      - "fakegram-api"
+    stdin_open: true
+    tty: true
+
+  fakegram-api:
+    build:
+      dockerfile: fakegram-api.dockerfile
+      context: ./fakegram-api
+    image: rmoraes/fakegram-api:v1
+    container_name: fakegram-api
+    ports:
+      - "3000:3000"
+    networks:
+      - fakegram-network

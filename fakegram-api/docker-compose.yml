@@ -1,0 +1,13 @@
+version: "3"
+services:
+  fakegram-api:
+    image: "node:latest"
+    container_name: fakegram-api
+    working_dir: /development
+    volumes:
+     - .:/development:z
+     - .docker_volume/root_home:/root:z
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
